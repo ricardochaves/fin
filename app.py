@@ -27,9 +27,11 @@ def crypto_quotes(symbol):
     value = response.json()["data"][f"{symbol}"]["quote"]["USD"]["price"]
     return round(value,2)
 
-
+@app.route("/healthcheck")
+def healthcheck():
+    return {"status": "ok"}
 @app.route("/quotes")
-def hello_world():
+def quotes():
     response = {
         "USD_BRL": usd_brl(),
         "ARGT": finnhub_client.quote('ARGT')["c"],
