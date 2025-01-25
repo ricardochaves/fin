@@ -8,3 +8,4 @@ COPY app.py .
 
 ENV FLASK_APP=app.py
 
+ENTRYPOINT ["python", "app.py"]
