@@ -30,6 +30,10 @@ def crypto_quotes(symbol):
 @app.route("/healthcheck")
 def healthcheck():
     return {"status": "ok"}
+
+@app.route("/usd_brl")
+def usd_brl_view():
+    return {"USD_BRL": usd_brl()}
 @app.route("/quotes")
 def quotes():
     response = {
